@@ -54,11 +54,11 @@ For other models (like old LDMs or VQGANs), you may need to adapt the code to lo
 #### Perceptual Losses
 
 The perceptual losses are based on [this repo](https://github.com/SteffenCzolbe/PerceptualSimilarity/).
-You should download the weights here: https://github.com/SteffenCzolbe/PerceptualSimilarity/tree/master/src/loss/weights, and put them in a folder called `losses` (this is used in [L](https://github.com/pierrefdz/stable_signature/blob/main/src/loss/loss_provider.py#L22)).
+You should download the weights here: https://github.com/SteffenCzolbe/PerceptualSimilarity/tree/master/src/loss/weights, and put them in a folder called `losses` (this is used in [src/loss/loss_provider.py#L22](https://github.com/pierrefdz/stable_signature/blob/main/src/loss/loss_provider.py#L22)).
 To do so you can run 
 ```
 git clone https://github.com/SteffenCzolbe/PerceptualSimilarity.git
-cp PerceptualSimilarity/src/loss/weights losess
+cp PerceptualSimilarity/src/loss/weights losses
 rm -r PerceptualSimilarity
 ```
 
