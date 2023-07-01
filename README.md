@@ -51,6 +51,17 @@ Create LDM configs and checkpoints from the [Hugging Face](https://huggingface.c
 The code should also work for Stable Diffusion v1 without any change. 
 For other models (like old LDMs or VQGANs), you may need to adapt the code to load the checkpoints.
 
+#### Perceptual Losses
+
+The perceptual losses are based on [this repo](https://github.com/SteffenCzolbe/PerceptualSimilarity/).
+You should download the weights here: https://github.com/SteffenCzolbe/PerceptualSimilarity/tree/master/src/loss/weights, and put them in a folder called `losses` (this is used in [L](https://github.com/pierrefdz/stable_signature/blob/main/src/loss/loss_provider.py#L22)).
+To do so you can run 
+```
+git clone https://github.com/SteffenCzolbe/PerceptualSimilarity.git
+cp PerceptualSimilarity/src/loss/weights losess
+rm -r PerceptualSimilarity
+```
+
 
 ## Usage
 
