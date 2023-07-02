@@ -30,7 +30,7 @@ This codebase has been developed with python version 3.8, PyTorch version 1.12.0
 
 #### Data
 
-The paper uses a filtered [COCO](https://cocodataset.org/) dataset to fine-tune the LDM decoder.
+The paper uses the [COCO](https://cocodataset.org/) dataset to fine-tune the LDM decoder (we filtered images containing people).
 All you need is around 500 images for training (preferably over 256x256).
 
 #### Watermark models
