@@ -42,8 +42,7 @@ The `.pth` file has not been whitened, while the `.torchscript.pt` file has been
 | --- | --- | --- |
 | Extractor | [dec_48b.pt](https://dl.fbaipublicfiles.com/ssl_watermarking/dec_48b.pth) | [dec_48b_whit.torchscript.pt](https://dl.fbaipublicfiles.com/ssl_watermarking/dec_48b_whit.torchscript.pt)  |
 
-Code to train the watermark models will be made available.
-Current models come from https://github.com/facebookresearch/ssl_watermarking.
+Code to train the watermark models will be made available in the future (incoming months, when I get the time to clean it up).
 
 #### Stable Diffusion models
 
