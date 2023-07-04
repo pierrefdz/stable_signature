@@ -80,7 +80,8 @@ This code should generate:
 - `keys.txt`: text file containing the keys used for fine-tuning (one key per line),
 - `imgs`: folder containing examples of auto-encoded images.
 
-
+[Params of LDM fine-tuning used in the paper](https://justpaste.it/aw0gj)  
+[Logs during LDM fine-tuning](https://justpaste.it/cse0x)
 
 ### Generate
 
