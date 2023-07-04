@@ -88,8 +88,10 @@ This code should generate:
 Reload weights of the LDM decoder in the Stable Diffusion scripts by appending the following lines after loading the checkpoint 
 (for instance, [L220 in the SD repo](https://github.com/Stability-AI/stablediffusion/blob/main/scripts/txt2img.py#L220))
 ```python
-state_dict = torch.load(path/to/ldm/checkpoint_000.pth)
+state_dict = torch.load(path/to/ldm/checkpoint_000.pth)['ldm_decoder']
 msg = model.first_stage_model.load_state_dict(state_dict, strict=False)
+print(f"loaded LDM decoder state_dict with message\n{msg}")
+print("you should check that the decoder keys are correctly matched")
 ```
 
 
