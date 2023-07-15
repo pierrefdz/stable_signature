@@ -1,7 +1,7 @@
 # ✍️ The Stable Signature: Rooting Watermarks in Latent Diffusion Models
 
 Implementation and pretrained models.
-For details, see [**the paper**](https://arxiv.org/abs/2303.15435).  
+For details, see [**the paper**](https://arxiv.org/abs/2303.15435) (or got to ICCV 2023 in Paris 🥐).  
 
 [[`Webpage`](https://pierrefdz.github.io/publications/stablesignature/)]
 [[`arXiv`](https://arxiv.org/abs/2303.15435)]
