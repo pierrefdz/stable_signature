@@ -37,10 +37,12 @@ All you need is around 500 images for training (preferably over 256x256).
 
 The watermark extractor model can be downloaded in the following links.
 The `.pth` file has not been whitened, while the `.torchscript.pt` file has been and can be used without any further processing.
+We additionally provide another extractor model, which has been trained with blur and rotations and has better robustness to that kind of attacks, at the cost of a slightly lower image quality (you might need to adjust the perceptual loss weight at your convenience).
 
 | Model | Checkpoint | Torch-Script |
 | --- | --- | --- |
 | Extractor | [dec_48b.pt](https://dl.fbaipublicfiles.com/ssl_watermarking/dec_48b.pth) | [dec_48b_whit.torchscript.pt](https://dl.fbaipublicfiles.com/ssl_watermarking/dec_48b_whit.torchscript.pt)  |
+| Other | [other_dec_48b_whit.pth](https://dl.fbaipublicfiles.com/ssl_watermarking/other_dec_48b.pth) | [other_dec_48b_whit.torchscript.pt](https://dl.fbaipublicfiles.com/ssl_watermarking/dec_48b_whit.torchscript.pt) |
 
 Code to train the watermark models will be made available in the future (incoming months, when I get the time to clean it up).
 

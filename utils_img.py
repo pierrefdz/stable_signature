@@ -1,3 +1,8 @@
+# Copyright (c) Meta Platforms, Inc. and affiliates.
+# All rights reserved.
+
+# This source code is licensed under the license found in the
+# LICENSE file in the root directory of this source tree.
 
 # pyright: reportMissingModuleSource=false
 
@@ -132,7 +137,6 @@ def overlay_text(x, text='Lorem Ipsum'):
         img_aug[ii] = to_tensor(aug_functional.overlay_text(pil_img, text=text))
     return normalize_img(img_aug)
 
-
 def jpeg_compress(x, quality_factor):
     """ Apply jpeg compression to image
     Args:
@@ -146,4 +150,3 @@ def jpeg_compress(x, quality_factor):
         pil_img = to_pil(unnormalize_img(img))
         img_aug[ii] = to_tensor(aug_functional.encoding_quality(pil_img, quality=quality_factor))
     return normalize_img(img_aug)
-

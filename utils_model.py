@@ -1,3 +1,8 @@
+# Copyright (c) Meta Platforms, Inc. and affiliates.
+# All rights reserved.
+
+# This source code is licensed under the license found in the
+# LICENSE file in the root directory of this source tree.
 
 import importlib
 import torch
@@ -54,15 +59,6 @@ class HiddenDecoder(nn.Module):
 
         return x
 
-def get_hidden_decoder(num_bits, redundancy=1, num_blocks=7, channels=64):
-    decoder = HiddenDecoder(num_blocks=num_blocks, num_bits=num_bits, channels=channels, redundancy=redundancy)
-    return decoder
-
-def get_hidden_decoder_ckpt(ckpt_path):
-    ckpt = torch.load(ckpt_path, map_location="cpu")
-    decoder_ckpt = { k.replace('module.', '').replace('decoder.', '') : v for k,v in ckpt['encoder_decoder'].items() if 'decoder' in k}
-    return decoder_ckpt
-
 class HiddenEncoder(nn.Module):
     """
     Inserts a watermark into an image.
@@ -99,6 +95,15 @@ class HiddenEncoder(nn.Module):
 
         return im_w
 
+def get_hidden_decoder(num_bits, redundancy=1, num_blocks=7, channels=64):
+    decoder = HiddenDecoder(num_blocks=num_blocks, num_bits=num_bits, channels=channels, redundancy=redundancy)
+    return decoder
+
+def get_hidden_decoder_ckpt(ckpt_path):
+    ckpt = torch.load(ckpt_path, map_location="cpu")
+    decoder_ckpt = { k.replace('module.', '').replace('decoder.', '') : v for k,v in ckpt['encoder_decoder'].items() if 'decoder' in k}
+    return decoder_ckpt
+
 def get_hidden_encoder(num_bits, num_blocks=4, channels=64):
     encoder = HiddenEncoder(num_blocks=num_blocks, num_bits=num_bits, channels=channels)
     return encoder
@@ -118,7 +123,6 @@ def instantiate_from_config(config):
             return None
         raise KeyError("Expected key `target` to instantiate.")
     return get_obj_from_str(config["target"])(**config.get("params", dict()))
-
 
 def get_obj_from_str(string, reload=False):
     module, cls = string.rsplit(".", 1)
