@@ -36,7 +36,8 @@ All you need is around 500 images for training (preferably over 256x256).
 #### Watermark models
 
 The watermark extractor model can be downloaded in the following links.
-The `.pth` file has not been whitened, while the `.torchscript.pt` file has been and can be used without any further processing.
+The `.pth` file has not been whitened, while the `.torchscript.pt` file has been and can be used without any further processing. 
+
 We additionally provide another extractor model, which has been trained with blur and rotations and has better robustness to that kind of attacks, at the cost of a slightly lower image quality (you might need to adjust the perceptual loss weight at your convenience).
 
 | Model | Checkpoint | Torch-Script |
